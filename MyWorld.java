@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class MyWorld here.
@@ -37,6 +38,7 @@ public class MyWorld extends World
     public void act()
     {
         spawnMusuh();
+        spawnBonus();
         Nyawa();
         Score();
         Status();
@@ -63,10 +65,16 @@ public class MyWorld extends World
     private void Status()
     {
         if(skor>1500) {
-            showText("Anda Menang", 500, 500);
+            //showText("Anda Menang", 500, 500);
+            addObject(new Dialog(), getWidth()/2, getHeight()/2);
+            Dialog kotak = getObjects(Dialog.class).get(0);
+            kotak.tampilDialog("KAMU MENANG", "SCORE KAMU : " +skor);
             Greenfoot.stop();
         } else if(skor<0) {
-            showText("Anda Kalah", 500, 500);
+            //showText("Anda Kalah", 500, 500);
+            addObject(new Dialog(), getWidth()/2, getHeight()/2);
+            Dialog kotak = getObjects(Dialog.class).get(0);
+            kotak.tampilDialog("KAMU KALAH", "SCORE KAMU : " +skor);
             Greenfoot.stop();
         }
     }
@@ -77,6 +85,19 @@ public class MyWorld extends World
         if (Greenfoot.getRandomNumber(100) < 1)
         {
             addObject(new Musuh(), 1000, getRandomNumber(50,550));
+        }
+    }
+    private void spawnBonus()
+    {
+        List adaBonus = getObjects(bonus.class);
+        if (Greenfoot.getRandomNumber(1000) < 1 && adaBonus.size() == 0)
+        {
+            int RNG = Greenfoot.getRandomNumber(3);
+            switch (RNG) {
+            case 0 : addObject(new bonus1(), 1000, getRandomNumber(50,550)); break;
+            case 1 : addObject(new bonus2(), 1000, getRandomNumber(50,550)); break;
+            case 2 : addObject(new bonus3(), 1000, getRandomNumber(50,550)); break;
+            }
         }
     }
     

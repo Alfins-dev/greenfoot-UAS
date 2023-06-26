@@ -19,7 +19,8 @@ public class bullet extends Actor
     
     public void gerak()
     {
-        setLocation(getX()-5,getY());
+        //setLocation(getX()-5,getY());
+        move(-5);
         if(getX()<1)
         {
             getWorld().removeObject(this);

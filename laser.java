@@ -18,7 +18,8 @@ public class laser extends Actor
     }
     public void gerak()
     {
-        setLocation(getX()+10,getY());
+        //setLocation(getX()+10,getY());
+        move(10);
         if(getX()>990)
         {
             getWorld().removeObject(this);

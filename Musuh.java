@@ -21,7 +21,8 @@ public class Musuh extends Actor
     
     private void bergerak()
     {
-        setLocation(getX()-1, getY());
+        //setLocation(getX()-1, getY());
+        move(-1);
         if (getX() == 10){
             getWorld().removeObject(this);
         }
