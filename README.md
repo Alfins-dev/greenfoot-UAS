@@ -8,15 +8,15 @@
     - [ ] method dengan constructors
     - [x] fungsi kembalian (return)
     - [x] fungsi dengan parameter
-- [ ] Aplikasi harus terdapat percabangan if else dan switch case (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa) - Poin 15.
+- [x] Aplikasi harus terdapat percabangan if else dan switch case (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa) - Poin 15.
     - [x] if else
     - [x] switch case
-- [ ] Aplikasi harus terdapat variabel, variabel public, variabel private, variabel static final dan variabel object instance (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa) - Poin 15
+- [x] Aplikasi harus terdapat variabel, variabel public, variabel private, variabel static final dan variabel object instance (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa) - Poin 15
     - [x] public
     - [x] private
     - [x] static final
-    - [ ] object instance
-- [ ] Aplikasi harus terdapat perulangan / looping (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa) - Poin 15.
+    - [x] object instance
+- [x] Aplikasi harus terdapat perulangan / looping (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa) - Poin 15.
 - [ ] Aplikasi harus terdapat randomization dan casting data type (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa) - Poin 15.
     - [x] randomization
     - [ ] casting data type

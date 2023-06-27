@@ -17,7 +17,7 @@ public class Pesawat extends Actor
     {
         kontrol();
         if (jedaTembak > 0) jedaTembak--;
-        if (jedaTembak == 0) jedaTembak=20;
+        
     }
     
     private void kontrol() 
@@ -38,13 +38,27 @@ public class Pesawat extends Actor
         { 
             setLocation(getX(), getY() + 6);
         }
-        if (jedaTembak==1)
+        if(Greenfoot.isKeyDown("Space"))
         {
-            if(Greenfoot.isKeyDown("Space"))
-            {
-                getWorld().addObject(new laser(),getX()+60,getY());
-                
-            }
+            //getWorld().addObject(new laser(),getX()+60,getY());
+            repeater();
+        }
+    }
+    
+    private void meriam()
+    {
+        if (jedaTembak == 0) jedaTembak=20;
+        if (jedaTembak ==1) getWorld().addObject(new laser(),getX()+60,getY());
+    }
+    private void repeater()
+    {
+        if (jedaTembak == 0) jedaTembak=50;
+        if (jedaTembak ==1){
+            int i = 0;
+            do {
+                getWorld().addObject(new laser(),getX()+(20*i),getY());
+                i++;
+            } while(i<4);
         }
     }
 }

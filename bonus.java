@@ -19,8 +19,6 @@ public class bonus extends Actor
     protected void gerak()
     {
         move(-1);
-        if (getX() == 10){
-            getWorld().removeObject(this);
-        }
+        if (isAtEdge()) getWorld().removeObject(this);
     }
 }

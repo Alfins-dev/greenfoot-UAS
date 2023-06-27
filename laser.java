@@ -20,7 +20,7 @@ public class laser extends Actor
     {
         //setLocation(getX()+10,getY());
         move(10);
-        if(getX()>990)
+        if(isAtEdge())
         {
             getWorld().removeObject(this);
         }else{

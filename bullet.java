@@ -17,11 +17,11 @@ public class bullet extends Actor
         gerak();
     }
     
-    public void gerak()
+    private void gerak()
     {
         //setLocation(getX()-5,getY());
         move(-5);
-        if(getX()<1)
+        if(isAtEdge())
         {
             getWorld().removeObject(this);
         }else{
@@ -29,7 +29,7 @@ public class bullet extends Actor
         }
     }
     
-    public void hit()
+    private void hit()
     {
         if(isTouching(Pesawat.class))
         {
