@@ -15,5 +15,9 @@ public class bonus3 extends bonus
     public void act()
     {
         gerak();
+        bonus = 40;
+        tipeBonus = 3;
+        dptBonus();
     }
+    
 }

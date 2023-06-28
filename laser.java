@@ -35,9 +35,9 @@ public class laser extends Actor
             getWorld().addObject(new boom(),getX(),getY());
             MyWorld m=(MyWorld)getWorld();
             m.hitungSkor(10);
-            
             //Greenfoot.playSound("explosion.wav");
             removeTouching(Musuh.class);
+            getWorld().removeObject(this);
         }
     }
     

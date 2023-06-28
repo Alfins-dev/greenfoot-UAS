@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class bonus2 extends bonus
 {
+
     /**
      * Act - do whatever the bonus2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -15,5 +16,8 @@ public class bonus2 extends bonus
     public void act()
     {
         gerak();
+        bonus = 30;
+        tipeBonus = 2;
+        dptBonus();
     }
 }

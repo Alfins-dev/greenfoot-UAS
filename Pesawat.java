@@ -13,11 +13,13 @@ public class Pesawat extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int jedaTembak;
+    private int ROF;
+    public int tipeSenjata = 1;
     public void act()
     {
         kontrol();
         if (jedaTembak > 0) jedaTembak--;
-        
+        if (jedaTembak == 0) jedaTembak=ROF;
     }
     
     private void kontrol() 
@@ -41,24 +43,49 @@ public class Pesawat extends Actor
         if(Greenfoot.isKeyDown("Space"))
         {
             //getWorld().addObject(new laser(),getX()+60,getY());
-            repeater();
+            switch(tipeSenjata){
+            case 1 : bedil(); break;
+            case 2 : repeater(); break;
+            case 3 : tigaArah(); break;
+            }
+            //bedil();
+            //repeater();
+            //tigaArah();
         }
     }
     
-    private void meriam()
+    // Tipe Senjata
+    private void bedil()
     {
-        if (jedaTembak == 0) jedaTembak=20;
+        ROF = 20;
         if (jedaTembak ==1) getWorld().addObject(new laser(),getX()+60,getY());
     }
     private void repeater()
     {
-        if (jedaTembak == 0) jedaTembak=50;
+        ROF = 40;
         if (jedaTembak ==1){
             int i = 0;
             do {
-                getWorld().addObject(new laser(),getX()+(20*i),getY());
+                getWorld().addObject(new laser(),getX()+(40*i),getY());
                 i++;
             } while(i<4);
         }
+    }
+    private void tigaArah()
+    {
+        ROF = 20;
+        if (jedaTembak ==1) 
+        {
+            for (int i=1; i<4; i++)
+            {
+                laser laser = new laser();
+                getWorld().addObject(laser,getX()+60,getY()); 
+                laser.setRotation((45*i)-90);
+            }
+        }
+    }
+    private void megaCanon()
+    {
+        
     }
 }

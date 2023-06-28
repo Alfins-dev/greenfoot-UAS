@@ -24,7 +24,6 @@ public class Musuh extends Actor
         //setLocation(getX()-1, getY());
         move(-1);
         //if (getX() == 10){
-        //if (isAtEdge()) getWorld().removeObject(this);
         if(isAtEdge())
         {
             getWorld().removeObject(this);
@@ -46,7 +45,7 @@ public class Musuh extends Actor
         {
             getWorld().addObject(new boom(),getX(),getY());
             MyWorld m=(MyWorld)getWorld();
-            m.hitungSkor(-100);
+            m.hitungSkor(-90);
             getWorld().removeObject(this);
             //Greenfoot.playSound("meledak.mp3");
         }

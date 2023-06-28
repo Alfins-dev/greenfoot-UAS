@@ -45,7 +45,7 @@ public class MyWorld extends World
     }
     
     // HUD
-    public void Nyawa()
+    private void Nyawa()
     {
         showText("Nyawa : "+nyawa,84,30);
     }
@@ -57,8 +57,7 @@ public class MyWorld extends World
     // Hitung Skor
     public void hitungSkor(int points)
     {
-        skor = skor+points;
-        //Score();
+        skor += points;
     }
     
     // Status pemain
@@ -107,4 +106,6 @@ public class MyWorld extends World
        int normal = Greenfoot.getRandomNumber(end-start+1);
        return normal+start;
     }
+    
+    //Debug
 }
