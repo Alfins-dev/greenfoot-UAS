@@ -4,8 +4,8 @@
 
 - [ ] Buat Kelompok
 - [x] Buat Aplikasi greenfoot dengan tema bebas (jelaskan tema dan algoritma aplikasi tersebut) - Poin 10.
-- [ ] Aplikasi harus terdapat method dengan constructors, fungsi kembalian dan fungsi dengan parameter (tunjukan kodenya dan jelaskan kegunaan method tersebut digunakan untuk fitur apa) - Poin 15.
-    - [ ] method dengan constructors
+- [x] Aplikasi harus terdapat method dengan constructors, fungsi kembalian dan fungsi dengan parameter (tunjukan kodenya dan jelaskan kegunaan method tersebut digunakan untuk fitur apa) - Poin 15.
+    - [x] method dengan constructors
     - [x] fungsi kembalian (return)
     - [x] fungsi dengan parameter
 - [x] Aplikasi harus terdapat percabangan if else dan switch case (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa) - Poin 15.
@@ -17,9 +17,9 @@
     - [x] static final
     - [x] object instance
 - [x] Aplikasi harus terdapat perulangan / looping (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa) - Poin 15.
-- [ ] Aplikasi harus terdapat randomization dan casting data type (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa) - Poin 15.
+- [x] Aplikasi harus terdapat randomization dan casting data type (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa) - Poin 15.
     - [x] randomization
-    - [ ] casting data type
+    - [x] casting data type
 - [ ] Aplikasi harus terdapat fitur keyboard control dan animation (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa)- Poin 15.
     - [x] keyboard control
     - [ ] animation

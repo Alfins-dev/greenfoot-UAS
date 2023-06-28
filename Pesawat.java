@@ -20,6 +20,7 @@ public class Pesawat extends Actor
         kontrol();
         if (jedaTembak > 0) jedaTembak--;
         if (jedaTembak == 0) jedaTembak=ROF;
+        
     }
     
     private void kontrol() 
@@ -51,6 +52,7 @@ public class Pesawat extends Actor
             //bedil();
             //repeater();
             //tigaArah();
+            //megaCannon();
         }
     }
     
@@ -84,8 +86,30 @@ public class Pesawat extends Actor
             }
         }
     }
-    private void megaCanon()
+    private void megaCannon()
     {
-        
+        ROF = 50;
+        if (jedaTembak ==1) 
+        {
+            getWorld().addObject(new Charge(20),getX()+60,getY()); 
+        }
     }
+    
+    // Status
+    public void terTembak(int damage)
+    {
+        MyWorld w=(MyWorld)getWorld();
+        int perisai = w.statPerisai();
+        if(perisai>0){
+            w.hitPerisai(damage);
+            getWorld().addObject(new spark(),getX(),getY());
+        } else {
+            w.hitNyawa(-1);
+            getWorld().addObject(new boom(),getX(),getY());
+            w.removeObject(this);
+            w.hitungSkor(-100);
+            w.respawn();
+        }
+    }
+    
 }

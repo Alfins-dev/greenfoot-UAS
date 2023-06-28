@@ -33,9 +33,10 @@ public class bullet extends Actor
     {
         if(isTouching(Pesawat.class))
         {
-            getWorld().addObject(new spark(),getX(),getY());
+            //getWorld().addObject(new spark(),getX(),getY());
             MyWorld m=(MyWorld)getWorld();
-            m.hitungSkor(-100);
+            //m.hitungSkor(-100);
+            (m.getObjects(Pesawat.class).get(0)).terTembak(-1);
             getWorld().removeObject(this);
             //Greenfoot.playSound("meledak.mp3");
         }

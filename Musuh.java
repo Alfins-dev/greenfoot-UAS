@@ -44,8 +44,9 @@ public class Musuh extends Actor
         if(isTouching(Pesawat.class))
         {
             getWorld().addObject(new boom(),getX(),getY());
-            MyWorld m=(MyWorld)getWorld();
-            m.hitungSkor(-90);
+            MyWorld w=(MyWorld)getWorld();
+            //m.hitungSkor(-90);
+            (w.getObjects(Pesawat.class).get(0)).terTembak(-1);
             getWorld().removeObject(this);
             //Greenfoot.playSound("meledak.mp3");
         }

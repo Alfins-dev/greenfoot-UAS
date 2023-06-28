@@ -12,6 +12,9 @@ public class MyWorld extends World
     public int skor=1000;
     public int nyawa=3;
     public int timer;
+    public int perisai=3;
+    private int regenerate=1;
+    private int regen;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -42,15 +45,18 @@ public class MyWorld extends World
         Nyawa();
         Score();
         Status();
+        Shield();
+        regenPerisai();
     }
     
     // HUD
-    private void Nyawa()
-    {
+    private void Nyawa(){
         showText("Nyawa : "+nyawa,84,30);
     }
-    private void Score()
-    {
+    private void Shield(){
+        showText("Perisai : "+perisai,500,30);
+    }
+    private void Score(){
         showText("Skor : "+skor,900,30);
     }
     
@@ -60,20 +66,32 @@ public class MyWorld extends World
         skor += points;
     }
     
+    // Fungsi Perisai
+    public int statPerisai(){
+        return perisai;
+    }
+    public void hitPerisai(int hit){
+        perisai += hit;
+    }
+    public void hitNyawa(int hit){
+        nyawa += hit;
+    }
+    private void regenPerisai(){
+        
+        if(perisai<3){
+            regen = (regen+1)%100;
+            if (regen == 0) perisai+=regenerate;
+        }
+    }
+    
     // Status pemain
     private void Status()
     {
-        if(skor>1500) {
+        if(skor>2000) {
             //showText("Anda Menang", 500, 500);
             addObject(new Dialog(), getWidth()/2, getHeight()/2);
             Dialog kotak = getObjects(Dialog.class).get(0);
             kotak.tampilDialog("KAMU MENANG", "SCORE KAMU : " +skor);
-            Greenfoot.stop();
-        } else if(skor<0) {
-            //showText("Anda Kalah", 500, 500);
-            addObject(new Dialog(), getWidth()/2, getHeight()/2);
-            Dialog kotak = getObjects(Dialog.class).get(0);
-            kotak.tampilDialog("KAMU KALAH", "SCORE KAMU : " +skor);
             Greenfoot.stop();
         }
     }
@@ -97,6 +115,17 @@ public class MyWorld extends World
             case 1 : addObject(new bonus2(), 1000, getRandomNumber(50,550)); break;
             case 2 : addObject(new bonus3(), 1000, getRandomNumber(50,550)); break;
             }
+        }
+    }
+    public void respawn(){
+        if (nyawa>0){
+            Pesawat pesawat = new Pesawat();
+            addObject(pesawat,86,287);
+        } else {
+            addObject(new Dialog(), getWidth()/2, getHeight()/2);
+            Dialog kotak = getObjects(Dialog.class).get(0);
+            kotak.tampilDialog("KAMU KALAH", "SCORE KAMU : " +skor);
+            Greenfoot.stop();
         }
     }
     
