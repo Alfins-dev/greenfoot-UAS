@@ -14,13 +14,31 @@ public class Pesawat extends Actor
      */
     private int jedaTembak;
     private int ROF;
-    public int tipeSenjata = 1;
+    public int tipeSenjata=0;
+    
+    int animateImage = 7;
+    int animateSpeed = 5;
+    int count;
+    
     public void act()
     {
         kontrol();
         if (jedaTembak > 0) jedaTembak--;
         if (jedaTembak == 0) jedaTembak=ROF;
-        
+        animate();
+    }
+    
+    private void animate(){
+        if (count % animateSpeed == 0)
+        {
+            if (animateImage == 7)
+            {
+                animateImage = 1;
+            }
+            setImage("plane"+animateImage+".png");
+            animateImage++;
+            getImage().scale(100, 50);
+        }
     }
     
     private void kontrol() 
@@ -45,7 +63,8 @@ public class Pesawat extends Actor
         {
             //getWorld().addObject(new laser(),getX()+60,getY());
             switch(tipeSenjata){
-            case 1 : bedil(); break;
+            case 0 : bedil(); break;
+            case 1 : dual(); break;
             case 2 : repeater(); break;
             case 3 : tigaArah(); break;
             }
@@ -54,6 +73,10 @@ public class Pesawat extends Actor
             //tigaArah();
             //megaCannon();
         }
+        if(Greenfoot.isKeyDown("Alt"))
+        {
+            megaCannon();
+        }
     }
     
     // Tipe Senjata
@@ -61,6 +84,14 @@ public class Pesawat extends Actor
     {
         ROF = 20;
         if (jedaTembak ==1) getWorld().addObject(new laser(),getX()+60,getY());
+    }
+    private void dual()
+    {
+        ROF = 20;
+        if (jedaTembak ==1) {
+            getWorld().addObject(new laser(),getX()+60,getY()+20);
+            getWorld().addObject(new laser(),getX()+60,getY()+10);
+        }
     }
     private void repeater()
     {

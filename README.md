@@ -20,9 +20,9 @@
 - [x] Aplikasi harus terdapat randomization dan casting data type (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa) - Poin 15.
     - [x] randomization
     - [x] casting data type
-- [ ] Aplikasi harus terdapat fitur keyboard control dan animation (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa)- Poin 15.
+- [x] Aplikasi harus terdapat fitur keyboard control dan animation (tunjukan kodenya dan jelaskan kegunaannya digunakan untuk fitur apa)- Poin 15.
     - [x] keyboard control
-    - [ ] animation
+    - [x] animation
 - [ ] Dokumentasikan dalam bentuk video, upload pada youtube dan kirim link/sematkan video di SUNAN serta unggah juga projek kodenya di SUNAN (embed link youtube & project code di SUNAN).
 
 UAS di upload di SUNAN paling lambat 03 Juli 2023.

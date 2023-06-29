@@ -9,6 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Musuh extends Actor
 {
     private int jeda=0;
+    int animateImage = 5;
+    int animateSpeed = 5;
+    int count;
     /**
      * Act - do whatever the Musuh wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,6 +20,20 @@ public class Musuh extends Actor
     {
         bergerak();
         menembak();
+        animate();
+    }
+    
+    private void animate(){
+        if (count % animateSpeed == 0)
+        {
+            if (animateImage == 5)
+            {
+                animateImage = 1;
+            }
+            setImage("enemy"+animateImage+".png");
+            animateImage++;
+            getImage().scale(62, 30);
+        }
     }
     
     private void bergerak()
@@ -52,4 +69,5 @@ public class Musuh extends Actor
         }
 
     }
+    
 }

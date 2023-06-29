@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class MyWorld extends World
 {
-    public int skor=1000;
+    public int skor=0;
     public int nyawa=3;
     public int timer;
     public int perisai=3;
