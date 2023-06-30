@@ -15,6 +15,8 @@ public class Pesawat extends Actor
     private int jedaTembak;
     private int ROF;
     public int tipeSenjata=0;
+    boolean charging;
+    int cInt=5;
     
     int animateImage = 7;
     int animateSpeed = 5;
@@ -26,7 +28,12 @@ public class Pesawat extends Actor
         if (jedaTembak > 0) jedaTembak--;
         if (jedaTembak == 0) jedaTembak=ROF;
         animate();
+        if (cInt>6) cInt=5;
+        if (cInt<0) cInt=0;
+        if (cInt==0) cInt=5;
     }
+    
+    
     
     private void animate(){
         if (count % animateSpeed == 0)
@@ -68,15 +75,27 @@ public class Pesawat extends Actor
             case 2 : repeater(); break;
             case 3 : tigaArah(); break;
             }
-            //bedil();
-            //repeater();
-            //tigaArah();
+        }
+        if (Greenfoot.isKeyDown("Alt")){
+            MyWorld w=(MyWorld)getWorld();
+            int perisai = w.statPerisai();
+            cInt -= perisai;
+            megaCannon(cInt*10);
+            w.hitPerisai(-3);
+        }
+        /**
+        if(charging != Greenfoot.isKeyDown("Alt")) //check perubahan tombol
+        {
+            charging = !charging; //rekam perubahan
+            if (charging){
+                if(cInt<6) cInt++;
+            } else {
+                //getWorld().addObject(new Charge(cInt),getX()+60,getY());
+                megaCannon(cInt*10);
+            }
             //megaCannon();
         }
-        if(Greenfoot.isKeyDown("Alt"))
-        {
-            megaCannon();
-        }
+        **/
     }
     
     // Tipe Senjata
@@ -117,18 +136,19 @@ public class Pesawat extends Actor
             }
         }
     }
-    private void megaCannon()
+    private void megaCannon(int chg)
     {
         ROF = 50;
-        if (jedaTembak ==1) 
+        if (jedaTembak ==1)
         {
-            getWorld().addObject(new Charge(20),getX()+60,getY()); 
+            getWorld().addObject(new Charge(chg),getX()+60,getY()); 
         }
     }
     
     // Status
     public void terTembak(int damage)
     {
+        
         MyWorld w=(MyWorld)getWorld();
         int perisai = w.statPerisai();
         if(perisai>0){
