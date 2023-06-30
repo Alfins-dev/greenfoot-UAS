@@ -45,7 +45,6 @@ public class MyWorld extends World
         Nyawa();
         Score();
         Status();
-        if (perisai<0) perisai=0;
         Shield();
         regenPerisai();
     }
