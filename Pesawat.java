@@ -61,21 +61,12 @@ public class Pesawat extends Actor
         }
         if(Greenfoot.isKeyDown("Space"))
         {
-            //getWorld().addObject(new laser(),getX()+60,getY());
             switch(tipeSenjata){
             case 0 : bedil(); break;
             case 1 : dual(); break;
             case 2 : repeater(); break;
             case 3 : tigaArah(); break;
             }
-            //bedil();
-            //repeater();
-            //tigaArah();
-            //megaCannon();
-        }
-        if(Greenfoot.isKeyDown("Alt"))
-        {
-            megaCannon();
         }
     }
     
@@ -83,7 +74,7 @@ public class Pesawat extends Actor
     private void bedil()
     {
         ROF = 20;
-        if (jedaTembak ==1) getWorld().addObject(new laser(),getX()+60,getY());
+        if (jedaTembak ==1) getWorld().addObject(new laser(),getX()+60,getY()+10);
     }
     private void dual()
     {
@@ -99,7 +90,7 @@ public class Pesawat extends Actor
         if (jedaTembak ==1){
             int i = 0;
             do {
-                getWorld().addObject(new laser(),getX()+(40*i),getY());
+                getWorld().addObject(new laser(),getX()+(40*i),getY()+10);
                 i++;
             } while(i<4);
         }
@@ -112,17 +103,9 @@ public class Pesawat extends Actor
             for (int i=1; i<4; i++)
             {
                 laser laser = new laser();
-                getWorld().addObject(laser,getX()+60,getY()); 
+                getWorld().addObject(laser,getX()+60,getY()+10); 
                 laser.setRotation((45*i)-90);
             }
-        }
-    }
-    private void megaCannon()
-    {
-        ROF = 50;
-        if (jedaTembak ==1) 
-        {
-            getWorld().addObject(new Charge(20),getX()+60,getY()); 
         }
     }
     
