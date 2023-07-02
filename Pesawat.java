@@ -61,7 +61,8 @@ public class Pesawat extends Actor
         }
         if(Greenfoot.isKeyDown("Space"))
         {
-            switch(tipeSenjata){
+            switch(tipeSenjata) //tentukan tipe senjata
+            {
             case 0 : bedil(); break;
             case 1 : dual(); break;
             case 2 : repeater(); break;
@@ -74,14 +75,14 @@ public class Pesawat extends Actor
     private void bedil()
     {
         ROF = 20;
-        if (jedaTembak ==1) getWorld().addObject(new laser(),getX()+60,getY()+10);
+        if (jedaTembak ==1) getWorld().addObject(new laser(0),getX()+60,getY()+10);
     }
     private void dual()
     {
         ROF = 20;
         if (jedaTembak ==1) {
-            getWorld().addObject(new laser(),getX()+60,getY()+20);
-            getWorld().addObject(new laser(),getX()+60,getY()+10);
+            getWorld().addObject(new laser(0),getX()+60,getY()+20);
+            getWorld().addObject(new laser(0),getX()+60,getY()+10);
         }
     }
     private void repeater()
@@ -90,7 +91,7 @@ public class Pesawat extends Actor
         if (jedaTembak ==1){
             int i = 0;
             do {
-                getWorld().addObject(new laser(),getX()+(40*i),getY()+10);
+                getWorld().addObject(new laser(0),getX()+(40*i),getY()+10);
                 i++;
             } while(i<4);
         }
@@ -102,9 +103,9 @@ public class Pesawat extends Actor
         {
             for (int i=1; i<4; i++)
             {
-                laser laser = new laser();
-                getWorld().addObject(laser,getX()+60,getY()+10); 
-                laser.setRotation((45*i)-90);
+                //laser laser = new laser();
+                getWorld().addObject(new laser((45*i)-90),getX()+60,getY()+10); 
+                //laser.setRotation((45*i)-90);
             }
         }
     }

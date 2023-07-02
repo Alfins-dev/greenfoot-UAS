@@ -17,23 +17,23 @@ public class Dialog extends Actor
         // Add your action code here.
     }
     
-    public static final float FONTSIZE = 40.0f;
-    public static final int WIDTH    = 400;
-    public static final int HEIGHT   = 300;
+    public static final float FONTSIZE = 40.0f; //ukuran font
+    public static final int WIDTH    = 400; //panjang dialog
+    public static final int HEIGHT   = 300; //lebar fialog 
     
     public void tampilDialog(String info, String info2)
     {
         GreenfootImage image = new GreenfootImage(WIDTH,HEIGHT);
-        image.setColor(new Color(0, 0, 0, 100));
+        image.setColor(new Color(0, 0, 0, 100)); //persegi luar (frame)
         image.fillRect(0, 0, WIDTH, HEIGHT);
-        image.setColor(new Color(255, 255, 255, 100));
+        image.setColor(new Color(255, 255, 255, 100)); //persegi dalam (content)
         image.fillRect(5, 5, WIDTH-10, HEIGHT-10);
         Font font = image.getFont();
         font = font.deriveFont(FONTSIZE);
         image.setFont(font);
         image.setColor(Color.WHITE);
-        image.drawString(info, 60, 100);
-        image.drawString(info2, 10, 200);
+        image.drawString(info, 60, 100); // teks judul
+        image.drawString(info2, 10, 200); //teks subjudul
         setImage(image);
     }
 }
