@@ -52,7 +52,7 @@ public class Musuh extends Actor
     private void menembak()
     {
         if(jeda>0)jeda--;
-        if(jeda==1)getWorld().addObject(new bullet(),getX(),getY());
+        if(jeda==1)getWorld().addObject(new bullet(0),getX(),getY());
         if(jeda==0)jeda=120;
     }
     

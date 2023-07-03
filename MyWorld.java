@@ -11,7 +11,7 @@ public class MyWorld extends World
 {
     public int skor=0;
     public int nyawa=3;
-    public int timer;
+    //public int timer;
     public int perisai=3;
     private int regenerate=1;
     private int regen;
@@ -87,7 +87,7 @@ public class MyWorld extends World
     // Status pemain
     private void Status()
     {
-        if(skor>2000) {
+        if(skor>1000) {
             //showText("Anda Menang", 500, 500);
             addObject(new Dialog(), getWidth()/2, getHeight()/2);
             Dialog kotak = getObjects(Dialog.class).get(0);
@@ -101,7 +101,7 @@ public class MyWorld extends World
     {
         if (Greenfoot.getRandomNumber(100) < 1)
         {
-            addObject(new Musuh(), 1000, getRandomNumber(50,550));
+            addObject(new Musuh(), 1000, nomorAcak(50,550));
         }
     }
     private void spawnBonus()
@@ -111,9 +111,9 @@ public class MyWorld extends World
         {
             int RNG = Greenfoot.getRandomNumber(3);
             switch (RNG) {
-            case 0 : addObject(new bonus1(), 1000, getRandomNumber(50,550)); break;
-            case 1 : addObject(new bonus2(), 1000, getRandomNumber(50,550)); break;
-            case 2 : addObject(new bonus3(), 1000, getRandomNumber(50,550)); break;
+            case 0 : addObject(new bonus1(), 1000, nomorAcak(50,550)); break;
+            case 1 : addObject(new bonus2(), 1000, nomorAcak(50,550)); break;
+            case 2 : addObject(new bonus3(), 1000, nomorAcak(50,550)); break;
             }
         }
     }
@@ -121,6 +121,7 @@ public class MyWorld extends World
         if (nyawa>0){
             Pesawat pesawat = new Pesawat();
             addObject(pesawat,86,287);
+            perisai = 3;
         } else {
             addObject(new Dialog(), getWidth()/2, getHeight()/2);
             Dialog kotak = getObjects(Dialog.class).get(0);
@@ -130,7 +131,7 @@ public class MyWorld extends World
     }
     
     // RNG (Random NumberGenerator) untuk selisih angka 
-    public int getRandomNumber(int start,int end)
+    public int nomorAcak(int start,int end)
     {
        int normal = Greenfoot.getRandomNumber(end-start+1);
        return normal+start;

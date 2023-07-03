@@ -12,10 +12,16 @@ public class laser extends Actor
      * Act - do whatever the laser wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public laser(int rotation){
+        setImage("laser.png");
+        setRotation(rotation);
+    }
+    
     public void act()
     {
         gerak();
     }
+    
     public void gerak()
     {
         //setLocation(getX()+10,getY());
