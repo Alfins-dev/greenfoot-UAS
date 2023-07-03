@@ -19,7 +19,11 @@ public int statPerisai(){
 ## fungsi berparameter
 
 ```java
+<<<<<<< HEAD
 public int nomorAcak(int start,int end)
+=======
+public int getRandomNumber(int start,int end)
+>>>>>>> branch 'main' of https://github.com/Alfins-dev/greenfoot-UAS.git
     {
        int normal = Greenfoot.getRandomNumber(end-start+1);
        return normal+start;
